@@ -8,7 +8,7 @@ Android Project
 
 [b. 실행화면](#실행화면)
 
-[c. 이슈](#이슈)
+[c. Issue](#Issue)
 
 ## 개발
 1. 프로젝트 제작배경
@@ -81,5 +81,6 @@ Android Project
 ![image](https://user-images.githubusercontent.com/31503178/64949811-fead6480-d8b4-11e9-8b43-4575f556fe97.png)
 
 
-## 이슈
+## ISSUE
+
 
