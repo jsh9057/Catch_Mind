@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/idinput"
+        android:layout_centerHorizontal="true"
+        android:hint="ID"
+        android:layout_marginTop="151dp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/pswInput"
+        android:layout_centerHorizontal="true"
+        android:hint="Password"
+        android:layout_below="@+id/idinput" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:text="Log in"
+        android:id="@+id/loginButton"
+        android:textAllCaps="false"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/pswInput"
+        android:layout_toStartOf="@+id/signupButton" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:text="Sign up"
+        android:id="@+id/signupButton"
+        android:textAllCaps="false"
+        android:layout_alignTop="@+id/loginButton"
+        android:layout_alignEnd="@+id/pswInput" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
+        android:textSize="50dp"
+        android:text="CATCH MIND" />
+
+    <TextView
+        android:id="@+id/alram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/signupButton"
+        android:layout_centerHorizontal="true"
+        android:textSize="15dip"
+        android:textColor="@color/colorAccent"
+        android:text="" />
+
+
+</RelativeLayout>

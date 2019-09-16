@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.jeong.real_mobile_project.Drawboard
+            android:id="@+id/Drawboard"
+            android:layout_width="match_parent"
+            android:layout_height="435dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:background="@drawable/black"
+            android:id="@+id/Button_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+           />
+
+        <Button
+            android:background="@drawable/blue"
+            android:id="@+id/Button_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+           />
+
+        <Button
+            android:background="@drawable/red"
+            android:id="@+id/Button_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+           />
+
+        <Button
+            android:background="@drawable/yellow"
+            android:id="@+id/Button_yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+             />
+
+        <Button
+            android:background="@drawable/clear"
+            android:id="@+id/Button_clear"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:id="@+id/showText_ScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/showText_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""/>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/editText_massage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="메세지를작성해주세요"/>
+        <Button
+            android:id="@+id/Button_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="전송"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
