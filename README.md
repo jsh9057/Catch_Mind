@@ -18,12 +18,14 @@ Android Project
 
 4. Architecture
 
+![image](https://user-images.githubusercontent.com/31503178/64949865-1e448d00-d8b5-11e9-92d3-5ff4034a01ea.png)
+
 - Catch mind는 실시간으로 그림의 점 좌표값(이하 point)를 대량으로 주고받아야 합니다. 때문에 최대한으로 socket server의 과부하를 줄이기 위해 data server와 socket server를 나누었습니다. socket server에서는 채팅, point, system massage를 실시간으로 주고 받습니다. 
  Web server & data server 는 AWS에 생성한 클라우드 OS이며 이 OS에 Mysql과 python 기반의 웹 프레임 워크인 django를 이용하여 구축하였습니다. django는 spring과 유사한 웹 프레임 워크이며 이를 이용해 웹 서버를 구축할 수 있습니다. 구축된 웹서버를 이용해 mysql에 접근하여 클라이언트들과 http통신을 하여 데이터를 주고받습니다.
 
 5. 주요 알고리즘
 
-- << sendThread 의 일부 >>
+ << sendThread 의 일부 >>
  public void run() {
   try {
  while(output!=null){
@@ -36,7 +38,7 @@ Android Project
    old_pointlist_size=now_pointlist_size;
  - point_list의 size값의 변동이 있을 때만 보내는 방식으로 구현.
 
-- << receiverThread 의 일부 >>
+ << receiverThread 의 일부 >>
   if(mop.kind.equals("point")&&!mop.nick.equals(drawboard.whodraw)){
      drawboard.point_list.add(mop.getp());
      drawboard.postInvalidate();
@@ -46,8 +48,6 @@ Android Project
 
 - permission을 두어 현재 그림을 그릴 권한이 없을 경우 Drawboard의 click listener 가 비활성화.
 
-
-![image](https://user-images.githubusercontent.com/31503178/64949865-1e448d00-d8b5-11e9-92d3-5ff4034a01ea.png)
 
 -로그인화면-
 
