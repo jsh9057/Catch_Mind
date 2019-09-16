@@ -85,6 +85,7 @@ Android Project
 
 <<목적>>
 android studio에서 작성한 객체를 Serializable를 통해 eclipse 상에 만든 TCP서버로 객체를 넘기는 것.
+
 문제점 : ObjectInputstream 의 생성자가 생성되지 않음.
 
  - 원인 : android studio에서 만든 직렬화를 할 객체 클래스의 패키지 명과 경로가
@@ -94,7 +95,9 @@ android studio에서 작성한 객체를 Serializable를 통해 eclipse 상에 �
 
 ![image](https://user-images.githubusercontent.com/31503178/64950601-b2fbba80-d8b6-11e9-934a-388f5d8ff04f.png)
 
-eclipse의 패키지의 이름과 경로를 android studio 패키지의 이름과 경로에 맞추었으나 이번엔 NullpointException 오류가 나옴. 보내기 전 객체의 정보를 각각 출력하여 확인 하였으나 정상 적으로 출력됨.
+eclipse의 패키지의 이름과 경로를 android studio 패키지의 이름과 경로에 맞추었으나 이번엔 NullpointException 오류가 나옴. 
+
+보내기 전 객체의 정보를 각각 출력하여 확인 하였으나 정상 적으로 출력됨.
 
 <<진행경과2>>
 
@@ -110,6 +113,7 @@ serialVersionUID 값을 맞춰 줌으로써, 직렬화가 가능해짐.
 <<진행경과3>>
 
 정상적으로 통신이 되는 것 같았지만, 클라이언트 측에서 다시 객체를 전송할 시 
+
 11-20 17:02:46.854 15736-15736/com.example.jeong.android_project E/AndroidRuntime: FATAL EXCEPTION: main
 Process: com.example.jeong.android_project, PID: 15736
 android.os.NetworkOnMainThreadException
@@ -125,6 +129,7 @@ at com.example.jeong.android_project.MainActivity$3.onClick(MainActivity.java:10
 ![image](https://user-images.githubusercontent.com/31503178/64950670-ea6a6700-d8b6-11e9-8c73-5831dba49cb7.png)
 
 objectOutputStream = new ObjectoutputStream(socket.getOutputStream()); 
+
 에서 에러가 나옴. 서버측에서 클라이언트의 객체를 보내는 것은 아무 문제없이 잘 됨.
 
 ![image](https://user-images.githubusercontent.com/31503178/64950676-edfdee00-d8b6-11e9-9a8c-3192daaac978.png)
@@ -133,12 +138,14 @@ objectOutputStream = new ObjectoutputStream(socket.getOutputStream());
 
 client의 Objectoutput문제로 추측.
 - ObjectInputStream을 양쪽에서 먼저 생성하면 blocking 모드로 빠진다는 것.
+
        But : 양쪽 모두 ObjectOutputStream의 생성자가 먼저 생성되게 설계함.
 
 - 처음 클라이언트 측에서 nick을 보낼시 OutputStream이 flash() 되지않은 경우.
    flash()가 되지 않을 경우 blocking모드로 빠질 수 있음.
        But : 클라이언트측의 첫 통신시 outputstream을 flash() 해주었으며,
              SendThread의 생성자에서 objectOutputStream을 사용하기전에도 flash()을                해주었으나 달라짐이없음.
+             
   판단근거 : at java.io.ObjectOutputStream$BlockDataOutputStream.drain(ObjectOutputStream.java:1946)
 　　　　　　　　　　at java.io.ObjectOutputStream$BlockDataOutputStream.setBlockDataMode(ObjectOutputStream.java:1833)
 
