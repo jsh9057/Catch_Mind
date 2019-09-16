@@ -1,8 +1,13 @@
 # Catch_Mind
 Android Project
 개발날짜 2017/11~2017/12
-------------------------------------------------------
+-------------------------------------------------------
+목차
+a. 개발(#개발)
+b. 실행화면(#실행화면)
+c. 이슈(#이슈)
 
+##개발
 1. 프로젝트 제작배경
 - 통신량이 많은 TCP/IP 통신과 AWS를 이용한 웹 서버 구축 및 http통신을 이용한 DB제어 목적.
 
@@ -49,6 +54,9 @@ Android Project
 - permission을 두어 현재 그림을 그릴 권한이 없을 경우 Drawboard의 click listener 가 비활성화.
 
 
+
+##실행화면
+
 -로그인화면-
 
 ![image](https://user-images.githubusercontent.com/31503178/64949672-ab3b1680-d8b4-11e9-9f16-fedd3c001679.png)
@@ -68,3 +76,7 @@ Android Project
 - 게임화면 2 -
 
 ![image](https://user-images.githubusercontent.com/31503178/64949811-fead6480-d8b4-11e9-8b43-4575f556fe97.png)
+
+
+##이슈
+
